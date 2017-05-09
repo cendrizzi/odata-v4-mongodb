@@ -7,6 +7,7 @@ describe("mongodb visitor", () => {
     var match;
      if (match = this.currentTest.title.match(/expression[^\:]*\:  ?(.*)/)) {
        f = createFilter(match[1]);
+
      }
   });
 
@@ -20,6 +21,165 @@ describe("mongodb visitor", () => {
   it("expression: (1 eq 1) or (2 eq 2)", () => {
       expect(f).to.deep.eql({})
   })
+
+  it("expression: length(CompanyName) eq 19", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: indexof(CompanyName,'lfreds') eq 1", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: substring(CompanyName,1) eq 'lfreds Futterkiste'", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: concat(concat(City,', '), Country) eq 'Berlin, Germany'", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: trim(CompanyName) eq 'Alfreds Futterkiste'", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: toupper(CompanyName) eq 'ALFREDS FUTTERKISTE'", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: tolower(CompanyName) eq 'alfreds futterkiste'", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+
+
+  it("expression: year(BirthDate) eq 0", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: month(BirthDate) eq 12", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: day(StartTime) eq 8", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: hour(StartTime) eq 1", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: minute(StartTime) eq 0", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: second(StartTime) eq 0", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: date(StartTime) ne date(EndTime)", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: time(StartTime) le StartOfDay", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: totaloffsetminutes(StartTime) eq 60", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: StartTime ge now()", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+  it("expression: StartTime eq now()", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+  it("expression: StartTime le now()", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: StartTime eq mindatetime()", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: EndTime eq maxdatetime()", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: round(Freight) eq 32", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: floor(Freight) eq 32", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: ceiling(Freight) eq 33", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+
+  it("expression: Price add 5 gt 10", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: 10 add 5 lt 10", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: Price add Other", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+
+  it("expression: Price mul 5 gt 10", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: 10 mul 5 lt 10", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: Price mul Other", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+  it("expression: (A mul B) div 10", () => {
+    console.log('f', JSON.stringify(f));
+    // expect(f).to.deep.eql({})
+  })
+
+
 
   it("expression 5.1.1.6.1: NullValue eq null", () => {
       expect(f).to.deep.eql({ NullValue: null })

@@ -1,5 +1,5 @@
 import { Token } from "odata-v4-parser/lib/lexer";
-export declare class Visitor {
+export declare class VisitorAggregation {
     query: any;
     sort: any;
     skip: number;
@@ -7,7 +7,7 @@ export declare class Visitor {
     projection: any;
     collection: string;
     navigationProperty: string;
-    includes: Visitor[];
+    includes: VisitorAggregation[];
     inlinecount: boolean;
     ast: Token;
     aggAddFieldsStage: any;

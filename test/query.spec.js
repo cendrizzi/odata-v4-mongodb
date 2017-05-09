@@ -10,6 +10,11 @@ describe("mongodb query", () => {
      }
   });
 
+  it("expression: $filter=length(Description) eq 10&$orderby=Name", () => {
+    expect(f.aggAddFieldsStage).to.deep.equal({ Description_len: { '$strLenCP': '$Description' } });
+    expect(f.sort).to.deep.equal({ Name: 1 });
+  });
+
   it("expression: $filter=contains(Name,'c')&$orderby=UnitPrice", () => {
       expect(f.query).to.deep.equal({ Name: /c/gi });
       expect(f.sort).to.deep.equal({ UnitPrice: 1 });
